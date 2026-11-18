@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: bharath-lab-04
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: lab-04
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true

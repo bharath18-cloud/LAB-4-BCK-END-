@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json());
 
 // Secret key constant for signing JWT tokens (per Lab 4 instruction; to be moved to .env in Lab 8)
-const JWT_SECRET = "AURORA_BACKEND_LABS_SECRET_KEY_2026";
+const JWT_SECRET = process.env.JWT_SECRET || "AURORA_BACKEND_LABS_SECRET_KEY_2026";
 const SALT_ROUNDS = 10;
 
 const isVercel = process.env.VERCEL === "1" || !!process.env.VERCEL;
