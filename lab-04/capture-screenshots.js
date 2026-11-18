@@ -5,7 +5,11 @@ const fs = require("fs");
 const SCREENSHOTS_DIR = path.join(__dirname, "screenshots");
 
 async function main() {
-  const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox", "--disable-setuid-sandbox"] });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
   const page = await browser.newPage();
   await page.setViewport({ width: 800, height: 600 });
 
